@@ -8,4 +8,4 @@
 - Käyttäjä pystyy hakemaan sekä itse lisäämiään että muiden käyttäjien lisäämiä kirja-arvosteluja.
 - Sovelluksessa on käyttäjäsivut, jotka näyttävät jokaisesta käyttäjästä tilastoja ja käyttäjän lisäämät kirja-arvostelut.
 - Käyttäjä pystyy valitsemaan kirjalle yhden tai useamman luokittelun (esim. kirjagenren mukaan).
-- Käyttäjä pystyy kirjoittamaan arvosteluja kirjoista
+- Käyttäjä pystyy kirjoittamaan arvosteluja kirjoista.
