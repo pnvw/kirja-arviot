@@ -1,4 +1,4 @@
-# kirja-arviot
+# kirja-arvostelut
 
 - Käyttäjä pystyy luomaan tunnuksen ja kirjautumaan sisään sovellukseen.
 - Käyttäjä pystyy lisäämään, muokkaamaan ja poistamaan kirja-arvosteluja.
