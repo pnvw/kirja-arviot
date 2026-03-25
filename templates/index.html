@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Otsikko</title>
+    <img src="/static/kuva.png" />
+</head>
+
+<body>
+    <h1>Kirja-arvostelut ja kommentit</h1>
+    <p>{{ message }}</p>
+    <ul>
+        {% for item in items %}
+        <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+</body>
+
+</html>
