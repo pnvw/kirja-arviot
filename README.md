@@ -9,27 +9,27 @@
 - Käyttäjä pystyy valitsemaan arvostelulle yhden tai useamman luokittelun (esim. kirjan lajityyppi ja arvosana).
 - Käyttäjä pystyy kirjoittamaan arvosteluja kirjoista.
 
-# Sovelluksen testaaminen paikallisesti
+# Sovelluksen testaaminen
 
 1. Luo tietokanta
 
-Aja projektikansiossa:
-sqlite3 database.db < schema.sql 
+- Aja projektikansiossa:
+- sqlite3 database.db < schema.sql 
 
 - Tämä luo tiedoston database.db paikalliseen projektiin
 
 2. Käynnistä sovellus
 
-Linux/macOS:
-export FLASK_APP=app.py 
-flask run
+- Linux/macOS:
+- export FLASK_APP=app.py 
+- flask run
 
-Windows:
-set FLASK_APP=app.py
-flask run
+- Windows:
+- set FLASK_APP=app.py
+- flask run
 
 3. Sovelluksen avaaminen selaimessa 
-Sovellus käynnistyy myös paikallisesti osoitteessa: http://127.0.0.1:5000
+- Sovellus käynnistyy selaimella osoitteessa: http://127.0.0.1:5000
 
 4. Sovelluksen testaaminen
 
