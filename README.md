@@ -16,7 +16,6 @@ Kirja-arvostelu sovelluksessa käyttäjät voivat lisätä ja lukea muiden tekem
 1. Luo tietokanta
 
 Aja seuraava komento projektikansiossa:
-```
 sqlite3 database.db < schema.sql
 
 2. Käynnistä sovellus
@@ -30,4 +29,5 @@ set FLASK_APP=app.py
 flask run
 
 3. Avaa sovellus selaimessa
-- Sovellus käynnistyy osoitteessa: http://127.0.0.1:5000
+
+Sovellus käynnistyy osoitteessa: http://127.0.0.1:5000
