@@ -22,12 +22,10 @@ sqlite3 database.db < schema.sql
 2. Käynnistä sovellus
 
 Linux/macOS:
-```bash
 export FLASK_APP=app.py 
 flask run
 
 Windows:
-```bash
 set FLASK_APP=app.py
 flask run
 
