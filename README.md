@@ -11,28 +11,20 @@
 
 Kirja-arvostelusovelluksessa käyttäjät voivat lisätä ja lukea muiden tekemiä kirja-arvosteluja tietyistä kirjoista. Sovelluksessa käyttäjillä on omat profiilit, ja arvosteluja voi luokitella kirjan lajityypin ja arvosanan mukaan.
 
-# Sovelluksen testaaminen
+# Sovelluksen asennus
 
-1. Luo tietokanta
+Asenna flask-kirjasto:
+```
+$ pip install flask
+```
 
-Aja seuraava komento projektikansiossa:
+Luo tietokannan taulut ja lisää alkutiedot:
+```
+$ sqlite3 database.db < schema.sql
+$ sqlite3 database.db < init.sql
+```
 
-sqlite3 database.db < schema.sql
-
-2. Käynnistä sovellus
-
-Linux/macOS:
-
-export FLASK_APP=app.py 
-
-flask run
-
-Windows:
-
-set FLASK_APP=app.py
-
-flask run
-
-3. Avaa sovellus selaimessa
-
-Sovellus käynnistyy osoitteessa: http://127.0.0.1:5000
+Voit käynnistää sovelluksen näin:
+```
+@ flask run
+```
