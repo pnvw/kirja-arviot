@@ -53,9 +53,6 @@ def new_item():
 def create_item():
     require_login()
 
-    book_type = request.form["book_type"]
-    if not book_type or len(book_type) > 50:
-        abort(403)
     book_name = request.form["book_name"]
     if not book_name or len(book_name) > 50:
         abort(403)
@@ -65,12 +62,12 @@ def create_item():
     review = request.form["review"]
     if not review or len(review) > 5000:
         abort(403)
-    grade = request.form["grade"]
-    if not re.search("^[1-5]{1,5}$", grade):
+    rating = request.form["rating"]
+    if not re.search("^[1-5]{1,5}$", rating):
         abort(403)
     user_id = session["user_id"]
 
-    items.add_item(book_type, book_name, writer, review, grade, user_id)
+    items.add_item(book_name, writer, review, rating, user_id)
 
     return redirect("/")
 
@@ -93,9 +90,6 @@ def update_item():
         abort(404)
     if item["user_id"] != session["user_id"]:
         abort(403)
-    book_type = request.form["book_type"]
-    if not book_type or len(book_type) > 50:
-        abort(403)
     book_name = request.form["book_name"]
     if not book_name or len(book_name) > 50:
         abort(403)
@@ -105,9 +99,9 @@ def update_item():
     review = request.form["review"]
     if not review or len(review) > 5000:
         abort(403)
-    grade = request.form["grade"]
+    rating = request.form["rating"]
 
-    items.update_item(item_id, book_type, book_name, writer, review, grade)
+    items.update_item(item_id, book_name, writer, review, rating)
 
     return redirect("/item/" + str(item_id))
 

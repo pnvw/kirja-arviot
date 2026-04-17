@@ -1,9 +1,9 @@
 import db
 
-def add_item(book_type, book_name, writer, review, grade, user_id):
-    sql = """INSERT INTO items (book_type, book_name, writer, review, grade, user_id)
-             VALUES (?, ?, ?, ?, ?, ?)"""
-    db.execute(sql, [book_type, book_name, writer, review, grade, user_id])
+def add_item(book_name, writer, review, rating, user_id):
+    sql = """INSERT INTO items (book_name, writer, review, rating, user_id)
+             VALUES (?, ?, ?, ?, ?)"""
+    db.execute(sql, [book_name, writer, review, rating, user_id])
 
 def get_items():
     sql = "SELECT id, book_name, writer FROM items ORDER BY id DESC"
@@ -11,11 +11,10 @@ def get_items():
 
 def get_item(item_id):
     sql = """SELECT items.id,
-                    items.book_type,
                     items.book_name,
                     items.writer,
                     items.review,
-                    items.grade,
+                    items.rating,
                     users.id user_id,
                     users.username
              FROM items, users
@@ -24,14 +23,13 @@ def get_item(item_id):
     result = db.query(sql, [item_id])
     return result[0] if result else None
 
-def update_item(item_id, book_type, book_name, writer, review, grade):
-    sql = """UPDATE items SET book_type = ?,
-                              book_name = ?,
+def update_item(item_id, book_name, writer, review, rating):
+    sql = """UPDATE items SET book_name = ?,
                               writer = ?,
                               review = ?,
-                              grade = ?
+                              rating = ?
                           WHERE id = ?"""
-    db.execute(sql, [book_type, book_name, writer, review, grade, item_id])
+    db.execute(sql, [book_name, writer, review, rating, item_id])
 
 def remove_item(item_id):
     sql = "DELETE FROM items WHERE id = ?"

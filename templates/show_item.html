@@ -14,16 +14,13 @@
   </p>
   {% endif %}
   <p>
-    Kirjan laji: {{ item.book_type }}
-  </p>
-  <p>
     {{ item.review }}
   </p>
   <p>
     Arvostelija: <a href="/user/{{ item.user_id }}">{{ item.username }}</a>
   </p>
   <p>
-    Arvosana (1 = huono, 5 = erinomainen): {{ item.grade }}
+    Arvosana (1-5): {{ item.rating }}
   </p>
     <a href="/">Takaisin</a>
   </p>

@@ -9,10 +9,6 @@
   <h1>Arvostelun muokkaus</h1>
   <form action="/update_item" method="post">
     <p>
-      Kirjan laji: <br />
-      <input type="text" name="book_type" value="{{ item.book_type }}" maxlength="50" required/>
-    </p>
-    <p>
       Kirjan nimi: <br />
       <input type="text" name="book_name" value="{{ item.book_name }}" maxlength="50" required/>
     </p>
@@ -26,7 +22,7 @@
       </p>
     <p>
       Arvosana (1-5): <br />
-      <input type="text" name="grade" size="4" value="{{ item.grade }}"/>
+      <input type="text" name="rating" size="4" value="{{ item.rating }}"/>
       </p>
       <input type="hidden" name="item_id" value="{{ item.id }}" /> 
       <input type="submit" value="Päivitä arvostelu" />

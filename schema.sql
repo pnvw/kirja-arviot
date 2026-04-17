@@ -6,10 +6,9 @@ CREATE TABLE users (
 
 CREATE TABLE items (
     id INTEGER PRIMARY KEY,
-    book_type TEXT,
     book_name TEXT,
     writer TEXT,
     review TEXT,
-    grade INTEGER,
+    rating INTEGER,
     user_id INTEGER REFERENCES users
 );
