@@ -23,7 +23,28 @@
     <p>
       Arvosana (1-5): <br />
       <input type="text" name="rating" size="4" pattern="[1-5]{1,5}"/>
-      </p>  
+      </p>
+      <p>
+        Genre: <br />
+        <select name="book_genre">
+          <option value="">(Valitse)</option>
+          <option value="dekkari">Dekkari</option>
+          <option value="kauhu">Kauhu</option>
+          <option value="fantasia">Fantasia</option>
+          <option value="tieto">Tieto</option>
+          <option value="scifi">Scifi</option>
+          <option value="romantiikka">Romantiikka</option>
+        </select>
+      </p>
+      <p>
+        Kohderymä: <br />
+        <select name="audience">
+          <option value="">(Valitse)</option>
+          <option value="lapset">Lapset</option>
+          <option value="nuoret">Nuoret</option>
+          <option value="aikuiset">Aikuiset</option>
+        </select>
+      </p>
     <input type="submit" value="Luo kirja-arvostelu" />
   </form>
 </body>

@@ -1,9 +1,19 @@
 import db
 
-def add_item(book_name, writer, review, rating, user_id):
+def add_item(book_name, writer, review, rating, user_id, classes):
     sql = """INSERT INTO items (book_name, writer, review, rating, user_id)
              VALUES (?, ?, ?, ?, ?)"""
     db.execute(sql, [book_name, writer, review, rating, user_id])
+
+    item_id = db.last_insert_id()
+
+    sql = "INSERT INTO item_classes (item_id, title, value) VALUES (?, ?, ?)"
+    for title, value in classes:
+        db.execute(sql, [item_id, title, value])
+
+def get_classes(item_id):
+    sql = "SELECT title, value FROM item_classes WHERE item_id = ?"
+    return db.query(sql, [item_id])
 
 def get_items():
     sql = "SELECT id, book_name, writer FROM items ORDER BY id DESC"
@@ -32,8 +42,8 @@ def update_item(item_id, book_name, writer, review, rating):
     db.execute(sql, [book_name, writer, review, rating, item_id])
 
 def remove_item(item_id):
-    sql = "DELETE FROM items WHERE id = ?"
-    db.execute(sql, [item_id])
+    db.execute("DELETE FROM item_classes WHERE item_id = ?", (item_id,))
+    db.execute("DELETE FROM items WHERE id = ?", (item_id,))
 
 def find_items(query):
     sql = """SELECT id, book_name, writer
