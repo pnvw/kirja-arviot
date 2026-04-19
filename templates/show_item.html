@@ -32,6 +32,20 @@
     </ul>
   </p>
   {% endif %}
+  <h2>Kommentit</h2>
+  <ul>
+    {% for comment in comments %}
+    <li>{{ comment.comment }}, <a href="/user/{{comment.user_id }}">{{comment.username }}</a></li>
+    {% endfor %}
+  </ul>
+  <h2>Uusi kommentti</h2>
+  <form action="/create_comment" method="post">
+  <p>
+    <textarea name="comment" rows="20" cols="80" maxlength="5000" required ></textarea>
+    </p>
+    <input type="hidden" name="item_id" value="{{ item.id }}">
+    <input type="submit" value="Kommentoi" />
+  </form>
   <p>
   <a href="/">Takaisin</a>
   </p>
