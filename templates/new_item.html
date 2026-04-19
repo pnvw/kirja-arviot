@@ -27,14 +27,14 @@
       {% for class in classes %}
       <p>
         {{ class }}: <br />
-        <select name="clases">
+        <select name="classes">
           <option value="">(Valitse)</option>
-        {% for option in classes[class] %}
-          <option value="{{ class }}:{{ option }}">{{ option.capitalize() }}</option>
-        {% endfor %}
-          </select>
-        </p>
-        {% endfor %}
+      {% for option in classes[class] %}
+        <option value="{{ class }}:{{ option }}">{{ option.capitalize() }}</option>
+      {% endfor %}
+      </select>
+    </p>
+    {% endfor %}
     <input type="submit" value="Luo kirja-arvostelu" />
   </form>
 </body>
