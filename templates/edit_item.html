@@ -18,13 +18,28 @@
     </p>
     <p>
       Arvostelu: <br />
-      <textarea name="review" rows="20" cols="80" maxlength="5000" required >{{ item.reviw }}</textarea>
+      <textarea name="review" rows="20" cols="80" maxlength="5000" required>{{ item.review }}</textarea>
       </p>
     <p>
       Arvosana (1-5): <br />
       <input type="text" name="rating" size="4" value="{{ item.rating }}"/>
       </p>
       <input type="hidden" name="item_id" value="{{ item.id }}" /> 
+      {% for class in all_classes %}
+      <p>
+        {{ class }}: <br />
+        <select name="classes">
+          <option value="">(Valitse)</option>
+        {% for option in all_classes[class] %}
+          {% if classes[class] == option %}
+          <option value="{{ class }}:{{ option }}" selected>{{ option.capitalize() }}</option>
+          {% else %}
+          <option value="{{ class }}:{{ option }}">{{ option.capitalize() }}</option>
+          {% endif %}
+        {% endfor %}
+        </select>
+      </p>
+      {% endfor %}
       <input type="submit" value="Päivitä arvostelu" />
   </form>
 </body>

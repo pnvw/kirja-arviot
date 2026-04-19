@@ -27,7 +27,7 @@
       {% for class in classes %}
       <p>
         {{ class }}: <br />
-        <select name="classes">
+        <select name="clases">
           <option value="">(Valitse)</option>
         {% for option in classes[class] %}
           <option value="{{ class }}:{{ option }}">{{ option.capitalize() }}</option>
