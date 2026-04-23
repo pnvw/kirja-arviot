@@ -70,7 +70,7 @@ def create_item():
     if not review or len(review) > 5000:
         abort(403)
     rating = request.form["rating"]
-    if not re.search("^[1-5]{1,5}$", rating):
+    if not re.search("^[1-5]$", rating):
         abort(403)
     user_id = session["user_id"]
 
@@ -96,7 +96,7 @@ def create_comment():
     require_login()
 
     comment = request.form["comment"]
-    if not comment or len(comment) > 3000:
+    if not comment or len(comment) > 5000:
         abort(403)
     item_id = request.form["item_id"]
     item = items.get_item(item_id)
