@@ -1,4 +1,6 @@
-# kirja-arvostelut
+# Kirja-arvostelut
+
+## Sovelluksen toiminnot
 
 - Käyttäjä pystyy luomaan tunnuksen ja kirjautumaan sisään sovellukseen.
 - Käyttäjä pystyy lisäämään, muokkaamaan ja poistamaan arvosteluja tietyistä kirjoista.
@@ -10,7 +12,7 @@
 
 Kirja-arvostelusovelluksessa käyttäjät voivat lisätä, lukea ja kommentoida muiden tekemiä kirja-arvosteluja tietyistä kirjoista. Sovelluksessa käyttäjillä on omat profiilit, ja arvosteluja voi luokitella kirjan genren ja kohderyhmän mukaan.
 
-# Sovelluksen asennus
+## Sovelluksen asennus
 
 Asenna **`flask`**-kirjasto:
 ```
@@ -23,7 +25,7 @@ $ sqlite3 database.db < schema.sql
 $ sqlite3 database.db < init.sql
 ```
 
-Voit käynnistää sovelluksen näin:
+Sovelluksen käynnistys:
 ```
 @ flask run
 ```
