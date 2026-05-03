@@ -5,15 +5,11 @@
 {% block content %}
 
 <h2>Viimeisimmät arvostelut</h2>
-<ul>
+
   {% for item in items %}
-  <li><a href="/item/{{ item.id }}">{{ item.book_name }} – {{ item.writer }}</a></li>
-  {% endfor %}
-</ul>
-<p>
-  <a href="/{{ page - 1 }}">&lt;&lt;</a>
-  Sivu {{ page }}/{{ page_count }}
-  <a href="/{{ page + 1 }}">&gt;&gt;</a>
-</p>
-<hr />
+<div class="item">
+<a href="/item/{{ item.id }}">{{ item.book_name }} – {{ item.writer }}</a> <br />
+Arvostelija: x <br />
+</div>
+{% endfor %}
 {% endblock %}

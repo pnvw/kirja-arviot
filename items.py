@@ -40,14 +40,9 @@ def get_classes(item_id):
     sql = "SELECT title, value FROM item_classes WHERE item_id = ?"
     return db.query(sql, [item_id])
 
-def get_items(page, page_size):
-    sql = """SELECT id, book_name, writer
-            FROM items
-            ORDER BY id DESC
-            LIMIT ? OFFSET ?"""
-    limit = page_size
-    offset = page_size * (page - 1)
-    return db.query(sql, [limit, offset])
+def get_items():
+    sql = "SELECT id, book_name, writer FROM items ORDER BY id DESC"
+    return db.query(sql)
 
 def item_count():
     sql = "SELECT COUNT(*) FROM items"
