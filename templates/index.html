@@ -1,44 +1,19 @@
-<!DOCTYPE html>
-<html>
+{% extends "layout.html" %}
 
-<head>
-  <title>Kirja-arvostelut</title>
-</head>
+{% block title %}Kirja-arvostelut{% endblock %}
 
-<body>
-    <h1>Kirja-arvostelut</h1>
+{% block content %}
 
-    {% if session.username %}
-    <p>
-      Olet kirjautunut nimellä {{ session.username }}
-    </p>
-    {% endif %}
-
-  <p>
-    <a href="/find_item">Etsi kirja-arvostelu</a> |
-  {% if session.user_id %}
-    <a href="/new_item">Uusi kirja-arvostelu</a> |
-    <a href="/logout">Kirjaudu ulos</a>
-  {% else %}
-    <a href="/login">Kirjaudu sisään</a> |
-    <a href="/register">Luo tunnus</a>
-  {% endif %}
-  </p>
-
-  <h2>Viimeisimmät arvostelut</h2>
-
-  <ul>
-    {% for item in items %}
-    <li><a href="/item/{{ item.id }}">{{ item.book_name }} – {{ item.writer }}</a></li>
-    {% endfor %}
-  </ul>
-  <p>
-    <a href="/{{ page - 1 }}">&lt;&lt;</a>
-    Sivu {{ page }}/{{ page_count }}
-    <a href="/{{ page + 1 }}">&gt;&gt;</a>
-  </p>
-  <hr />
-
-</body>
-
-</html>
+<h2>Viimeisimmät arvostelut</h2>
+<ul>
+  {% for item in items %}
+  <li><a href="/item/{{ item.id }}">{{ item.book_name }} – {{ item.writer }}</a></li>
+  {% endfor %}
+</ul>
+<p>
+  <a href="/{{ page - 1 }}">&lt;&lt;</a>
+  Sivu {{ page }}/{{ page_count }}
+  <a href="/{{ page + 1 }}">&gt;&gt;</a>
+</p>
+<hr />
+{% endblock %}

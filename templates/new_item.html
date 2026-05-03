@@ -1,43 +1,39 @@
-<!DOCTYPE html>
-<html>
+{% extends "layout.html" %}
 
-<head>
-  <title>Uusi kirja-arvostelu</title>
-</head>
+{% block title %}Uusi kirja-arvostelu{% endblock %}
 
-<body>
-  <h1>Uusi kirja-arvostelu</h1>
-  <form action="/create_item" method="post">
-    <input type="hidden" name="csrf_token" value="{{ session.csrf_token }}" />
-    <p>
-      Kirjan nimi: <br />
-      <input type="text" name="book_name" maxlength="50" required />
-    </p>
-    <p>
-      Kirjailija: <br />
-      <input type="text" name="writer" maxlength="50" required />
-    </p>
-    <p>
-      Arvostelu: <br />
-      <textarea name="review" rows="20" cols="80" maxlength="5000" required ></textarea>
-      </p>
-    <p>
-      Arvosana (1-5): <br />
-      <input type="text" name="rating" size="4" pattern="[1-5]"/>
-      </p>
-      {% for class in classes %}
-      <p>
-        {{ class }}: <br />
-        <select name="classes">
-          <option value="">(Valitse)</option>
-      {% for option in classes[class] %}
-        <option value="{{ class }}:{{ option }}">{{ option.capitalize() }}</option>
-      {% endfor %}
-      </select>
-    </p>
+{% block content %}
+
+<h2>Uusi kirja-arvostelu</h2>
+<form action="/create_item" method="post">
+  <input type="hidden" name="csrf_token" value="{{ session.csrf_token }}" />
+  <p>
+    Kirjan nimi: <br />
+    <input type="text" name="book_name" maxlength="50" required />
+  </p>
+  <p>
+    Kirjailija: <br />
+    <input type="text" name="writer" maxlength="50" required />
+  </p>
+  <p>
+    Arvostelu: <br />
+    <textarea name="review" rows="20" cols="80" maxlength="5000" required ></textarea>
+  </p>
+  <p>
+    Arvosana (1-5): <br />
+    <input type="text" name="rating" size="4" pattern="[1-5]"/>
+  </p>
+    {% for class in classes %}
+  <p>
+      {{ class }}: <br />
+      <select name="classes">
+        <option value="">(Valitse)</option>
+    {% for option in classes[class] %}
+      <option value="{{ class }}:{{ option }}">{{ option.capitalize() }}</option>
     {% endfor %}
-    <input type="submit" value="Luo kirja-arvostelu" />
-  </form>
-</body>
-
-</html>
+    </select>
+  </p>
+  {% endfor %}
+  <input type="submit" value="Luo kirja-arvostelu" />
+</form>
+{% endblock %}
