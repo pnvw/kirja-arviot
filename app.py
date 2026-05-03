@@ -1,10 +1,13 @@
-import sqlite3
-from flask import Flask
-from flask import abort, redirect, render_template, request, session
-import config, users
-import items
 import re
 import secrets
+import sqlite3
+
+from flask import Flask
+from flask import abort, redirect, render_template, request, session
+
+import config
+import items
+import users
 
 app = Flask(__name__)
 app.secret_key = config.secret_key
