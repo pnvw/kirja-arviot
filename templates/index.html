@@ -39,6 +39,13 @@
     <li><a href="/item/{{ item.id }}">{{ item.book_name }} – {{ item.writer }}</a></li>
     {% endfor %}
   </ul>
+  <p>
+    <a href="/{{ page - 1 }}">&lt;&lt;</a>
+    Sivu {{ page }}/{{ page_count }}
+    <a href="/{{ page + 1 }}">&gt;&gt;</a>
+  </p>
+  <hr />
+
 </body>
 
 </html>
